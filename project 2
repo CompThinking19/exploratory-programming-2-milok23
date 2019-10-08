@@ -1,0 +1,26 @@
+
+def positive(sequence):
+      """ checks if the sequence type is a list else reaises error"""
+      if type(sequence) == list:
+            count = 0
+            '''
+            for each element in the list it checks if it's a nummber
+            else raises an error.
+            '''
+            for element in sequence:
+                  if type(element) == int or type(element) == float:
+                        ''' if the number is positive it adds 1 to the count'''
+                        if element > 0:
+                              count += 1
+                  else:
+                        raise TypeError("wrong type, needs to be a number")
+
+      else:
+            raise TypeError("wrong type, needs to be a list")
+
+      return count
+
+
+positive([23.5,-3,-3.6,3.5,34,0,-5,1])
+
+positive("23,-3,-3,-35,34,0,-5,1")
